@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-shadow-mc {
+    text-shadow: 2px 2px 0px #000;
+}
+
+/* Radium & Dark Grey Theme Shadows */
+.text-shadow-radium {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(156, 220, 254, 0.6), 0 0 30px rgba(156, 220, 254, 0.4);
+}
+
+.text-shadow-dark {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Glassmorphism - Grey Tones */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-btn {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(156, 220, 254, 0.4);
+}
+
+/* Animated Background - Radium & Dark Grey */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Dark Grey Theme (Radium Accents) */
+.animated-bg-dark {
+    background: linear-gradient(-45deg, #0f1419, #1a1d29, #252936, #2d3142);
+    background-size: 400% 400%;
+    animation: gradient-animation 20s ease infinite;
+}
+
+/* Light Grey Theme (Radium Accents) */
+.animated-bg-light {
+    background: linear-gradient(-45deg, #e8eaed, #d1d5db, #b4bcc8, #9ca3af);
+    background-size: 400% 400%;
+    animation: gradient-animation 20s ease infinite;
+}
+
+/* Custom Scrollbar - Grey Theme */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6b7280, #4b5563);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #9ca3af, #6b7280);
+}
+
+/* Thin scrollbar for horizontal sections */
+.scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #6b7280, #4b5563);
+    border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section spacing for scroll navigation */
+section {
+    scroll-margin-top: 80px;
+}
