@@ -15,6 +15,9 @@ const Hero = ({ data, theme, darkMode, accentColor }) => {
                 <h3 className={`text-2xl md:text-3xl ${theme.mutedText} tracking-wide`}>
                     {data.title}
                 </h3>
+                <p className={`text-lg md:text-xl max-w-2xl ${theme.mutedText} leading-relaxed`}>
+                    Hey! I’m a B.Tech student who loves building cool things with AI, IoT, and full-stack development. I enjoy taking ideas, breaking them down, and turning them into working products that actually solve problems. Lately, I’ve been diving deeper into cloud computing and loving the whole process of leveling up my tech game.
+                </p>
                 <div className="flex items-center gap-4 text-2xl opacity-90">
                     <MapPin size={24} />
                     <span>{data.location}</span>
