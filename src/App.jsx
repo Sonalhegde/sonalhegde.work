@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon, ChevronUp } from 'lucide-react';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,70 +8,55 @@ import Events from './components/Events';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
-import Contact from './components/Contact';
-import Photography from './components/Photography';
-import Experience from './components/Experience';
 import Blogs from './components/Blogs';
+import Contact from './components/Contact';
 import SocialLinks from './components/SocialLinks';
-import Dither from './components/Dither';
+import GridDistortion from './components/GridDistortion';
 import { PORTFOLIO_DATA } from './data';
+
+// Simple theme definition (you can expand this later)
+const defaultTheme = {
+    cardBg: 'bg-white dark:bg-gray-800',
+    cardBorder: 'border-gray-200 dark:border-gray-700',
+    accentText: 'text-blue-600 dark:text-blue-400',
+    mutedText: 'text-gray-600 dark:text-gray-400',
+};
 
 function App() {
     const [darkMode, setDarkMode] = useState(true);
     const [showScrollTop, setShowScrollTop] = useState(false);
+    const [theme, setTheme] = useState(defaultTheme);
 
-    // Theme configuration
-    const theme = {
-        bg: darkMode ? 'bg-[#0a0a0a]' : 'bg-gray-50',
-        text: darkMode ? 'text-gray-100' : 'text-gray-900',
-        cardBg: darkMode ? 'bg-[#1a1a1a]/80' : 'bg-white/80',
-        cardBorder: darkMode ? 'border-white/10' : 'border-gray-200',
-        accent: darkMode ? 'text-blue-400' : 'text-blue-600',
-        buttonBg: darkMode ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600',
-    };
+    const toggleTheme = () => setDarkMode(!darkMode);
 
-    const toggleTheme = () => {
-        setDarkMode(!darkMode);
-        document.documentElement.classList.toggle('dark');
-    };
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
     useEffect(() => {
         const handleScroll = () => {
-            setShowScrollTop(window.scrollY > 400);
+            setShowScrollTop(window.scrollY > 300);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
     return (
-        <div className={`min-h-screen transition-colors duration-300 ${theme.bg} ${theme.text} relative overflow-x-hidden`}>
-            <Dither
-                waveColor={darkMode ? [0.1, 0.1, 0.1] : [0.9, 0.9, 0.9]}
-                disableAnimation={false}
-                enableMouseInteraction={true}
+        <div className={darkMode ? 'dark' : ''}>
+            <GridDistortion
+                color={darkMode ? '#5227FF' : '#000000'}
+                className="opacity-20"
             />
-
-            <Navbar theme={theme} darkMode={darkMode} toggleTheme={toggleTheme} />
-
-            <main className="container mx-auto px-4 py-8 relative z-10 space-y-20">
+            <Navbar darkMode={darkMode} toggleTheme={toggleTheme} theme={theme} />
+            <main className="relative min-h-screen">
                 <Hero data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
                 <About data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Experience data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                <Events data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
                 <Projects data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
                 <Skills data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Events data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Photography data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Blogs theme={theme} darkMode={darkMode} />
                 <Certifications data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                <Blogs theme={theme} darkMode={darkMode} />
                 <Contact data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
             </main>
-
             <SocialLinks darkMode={darkMode} />
-
             {/* Scroll to Top Button */}
             {showScrollTop && (
                 <button
@@ -81,7 +67,6 @@ function App() {
                     <ChevronUp size={24} />
                 </button>
             )}
-
             <footer className={`py-8 text-center border-t ${theme.cardBorder} glass-panel relative z-10`}>
                 <p className="text-xl">© 2025 Sonal Hegde. Crafted with ❤️ and Code.</p>
             </footer>

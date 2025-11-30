@@ -1,50 +1,80 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { MapPin, Github, Linkedin, Mail } from 'lucide-react';
 import MinecraftBtn from './MinecraftBtn';
+import VariableProximity from './VariableProximity';
+import FaultyTerminal from './FaultyTerminal';
 
-const Hero = ({ data, theme, darkMode, accentColor }) => {
+const Hero = ({ data, theme, darkMode }) => {
+    const containerRef = useRef(null);
+
     return (
-        <header id="hero" className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6">
-                <h1 className="text-7xl md:text-9xl mb-4 leading-none text-shadow-mc font-bold tracking-tighter">
-                    SONAL HEGDE
-                </h1>
-                <h2 className={`text-3xl md:text-5xl ${theme.accentText} uppercase tracking-wider font-bold`}>
-                    SONALHEGDE.WORK
+        <header
+            id="hero"
+            ref={containerRef}
+            className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden"
+        >
+            <div className="absolute inset-0 z-0 opacity-50">
+                <FaultyTerminal
+                    scale={2}
+                    gridMul={[1, 1]}
+                    digitSize={1.5}
+                    uScanlineIntensity={0.5}
+                    uGlitchAmount={0.5}
+                    uFlickerAmount={0.2}
+                    tint={darkMode ? '#5227FF' : '#B19EEF'}
+                />
+            </div>
+
+            {/* Left side text */}
+            <div className="flex-1 space-y-6 z-10">
+                <div className="text-7xl md:text-9xl mb-4 leading-none text-shadow-mc font-bold tracking-tighter cursor-default">
+                    <VariableProximity
+                        label="Sonal Hegde"
+                        className="variable-proximity-demo"
+                        fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                        toFontVariationSettings="'wght' 900, 'opsz' 40"
+                        containerRef={containerRef}
+                        radius={100}
+                        falloff="linear"
+                    />
+                </div>
+                <h2
+                    className={`text-3xl md:text-5xl ${theme.accentText} uppercase tracking-wider font-bold`}
+                >
+                    Full‑Stack Developer & Designer
                 </h2>
-                <h3 className={`text-2xl md:text-3xl ${theme.mutedText} tracking-wide`}>
-                    {data.title}
-                </h3>
-                <p className={`text-lg md:text-xl max-w-2xl ${theme.mutedText} leading-relaxed`}>
-                    Hey! I’m a B.Tech student who loves building cool things with AI, IoT, and full-stack development. I enjoy taking ideas, breaking them down, and turning them into working products that actually solve problems. Lately, I’ve been diving deeper into cloud computing and loving the whole process of leveling up my tech game.
-                </p>
+                <h3 className={`text-2xl md:text-3xl ${theme.mutedText} tracking-wide`}>{data.title}</h3>
                 <div className="flex items-center gap-4 text-2xl opacity-90">
                     <MapPin size={24} />
                     <span>{data.location}</span>
                 </div>
-
+                {/* Social buttons */}
                 <div className="flex gap-4 pt-6 flex-wrap">
                     <a href={data.socials.github} target="_blank" rel="noreferrer">
-                        <MinecraftBtn variant={darkMode ? "primary" : "accent"}>
-                            <div className="flex items-center gap-2"><Github size={20} /> GitHub</div>
+                        <MinecraftBtn variant={darkMode ? 'primary' : 'accent'}>
+                            <div className="flex items-center gap-2">
+                                <Github size={20} /> GitHub
+                            </div>
                         </MinecraftBtn>
                     </a>
                     <a href={data.socials.linkedin} target="_blank" rel="noreferrer">
-                        <MinecraftBtn variant={darkMode ? "accent" : "primary"}>
-                            <div className="flex items-center gap-2"><Linkedin size={20} /> LinkedIn</div>
+                        <MinecraftBtn variant={darkMode ? 'accent' : 'primary'}>
+                            <div className="flex items-center gap-2">
+                                <Linkedin size={20} /> LinkedIn
+                            </div>
                         </MinecraftBtn>
                     </a>
                     <a href={data.socials.calendly} target="_blank" rel="noreferrer">
-                        <MinecraftBtn variant="danger">
-                            Book Meeting
-                        </MinecraftBtn>
+                        <MinecraftBtn variant="danger">Book Meeting</MinecraftBtn>
                     </a>
                 </div>
             </div>
 
-            {/* Character Avatar / Visual */}
-            <div className="flex-1 flex justify-center">
-                <div className={`relative w-64 h-80 border-4 ${darkMode ? 'border-white bg-gray-800' : 'border-black bg-orange-400'} p-4 shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300`}>
+            {/* Right side avatar */}
+            <div className="flex-1 flex justify-center z-10">
+                <div
+                    className={`relative w-64 h-80 border-4 ${darkMode ? 'border-white bg-gray-800' : 'border-black bg-orange-400'} p-4 shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300`}
+                >
                     <img
                         src={`https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.name}&backgroundColor=b6e3f4`}
                         alt={data.name}

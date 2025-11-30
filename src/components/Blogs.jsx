@@ -45,15 +45,14 @@ const Blogs = ({ theme, darkMode }) => {
                                 alt={post.title}
                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                                 onError={(e) => {
-                                    e.target.src = "https://via.placeholder.com/400x300?text=" + encodeURIComponent(post.category);
+                                    e.target.src = `https://picsum.photos/400/300?text=${encodeURIComponent(post.category)}`;
                                 }}
                             />
-                            <div className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold ${darkMode ? 'bg-blue-500/80 text-white' : 'bg-gray-700/80 text-white'
-                                }`}>
+                            <div className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold ${darkMode ? 'bg-blue-500/80 text-white' : 'bg-gray-700/80 text-white'}`}
+                            >
                                 {post.category}
                             </div>
                         </div>
-
                         {/* Blog Content */}
                         <div className="p-6">
                             <h3 className={`text-xl font-bold mb-3 line-clamp-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -86,13 +85,14 @@ const Blogs = ({ theme, darkMode }) => {
                             </div>
                         </div>
                     </div>
-                ))}
-            </div>
+                ))
+                }
+            </div >
 
             <div className={`text-center mt-8 text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>Exploring Finance, Technology, and Innovation</p>
             </div>
-        </section>
+        </section >
     );
 };
 

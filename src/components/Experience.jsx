@@ -1,8 +1,36 @@
 import React from 'react';
 import { Briefcase, Calendar } from 'lucide-react';
 
-const Experience = ({ data, theme, darkMode }) => {
-    const experiences = data.experience;
+const Experience = ({ theme, darkMode }) => {
+    const experiences = [
+        {
+            id: 1,
+            organization: "CSI NMAMIT",
+            role: "Social Media Head",
+            period: "2025 - Present",
+            logo: "/images/csi.png",
+            type: "Leadership",
+            description: "Leading social media strategy and content creation"
+        },
+        {
+            id: 2,
+            organization: "Advanced Communication Students Association",
+            role: "Joint Treasurer",
+            period: "2025 - Present",
+            logo: "/images/acsa.png",
+            type: "Leadership",
+            description: "Managing finances and budgeting for student activities"
+        },
+        {
+            id: 3,
+            organization: "Masirat Technologies, Muscat",
+            role: "Upcoming Intern",
+            period: "Starting Soon",
+            logo: "/images/masirat.png",
+            type: "Internship",
+            description: "Technology internship in Muscat, Oman"
+        }
+    ];
 
     return (
         <section id="experience" className="container mx-auto px-4 py-16 scroll-mt-20">

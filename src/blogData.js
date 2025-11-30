@@ -6,7 +6,8 @@ export const blogPosts = [
         date: "Feb 2, 2024",
         readTime: "3 min read",
         excerpt: "The Silk Road was one of the most notorious online black markets ever created, operating on the dark web between 2011 and 2013...",
-        image: "/images/silk-road.jpg",
+        image: "/images/silk-road.png",
+
         content: `
 # The Silk Road: The Rise and Fall of the Dark Web's Most Infamous Marketplace
 

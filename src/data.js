@@ -30,44 +30,6 @@ export const PORTFOLIO_DATA = {
         "Sports Photography", "LTSpice", "Autodesk Tinkercad",
         "WordPress", "Search Engine Optimization (SEO)", "Canva", "n8n"
     ],
-    experience: [
-        {
-            id: 1,
-            organization: "CSI NMAMIT",
-            role: "Social Media Head",
-            period: "2025 - Present",
-            logo: "/images/csi.png",
-            type: "Leadership",
-            description: "Leading social media strategy and content creation"
-        },
-        {
-            id: 2,
-            organization: "Advanced Communication Students Association",
-            role: "Joint Treasurer",
-            period: "2025 - Present",
-            logo: "/images/acsa.png",
-            type: "Leadership",
-            description: "Managing finances and budgeting for student activities"
-        },
-        {
-            id: 3,
-            organization: "Grey Matter",
-            role: "Member",
-            period: "2024 - Present",
-            logo: "/images/greymatter.png",
-            type: "Club Activity",
-            description: "Quiz and Debate Club of NMAMIT Nitte. Represented in inter-college events 3 times."
-        },
-        {
-            id: 4,
-            organization: "Masirat Technologies, Muscat",
-            role: "Upcoming Intern",
-            period: "Starting Soon",
-            logo: "/images/masirat.png",
-            type: "Internship",
-            description: "Technology internship in Muscat, Oman"
-        }
-    ],
     projects: [
         {
             title: "Smart Medication Dispenser",
