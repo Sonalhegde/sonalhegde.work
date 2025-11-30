@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
-import { MapPin, Github, Linkedin, Mail } from 'lucide-react';
+import { MapPin, Github, Linkedin } from 'lucide-react';
 import MinecraftBtn from './MinecraftBtn';
 import VariableProximity from './VariableProximity';
-import FaultyTerminal from './FaultyTerminal';
 
 const Hero = ({ data, theme, darkMode }) => {
     const containerRef = useRef(null);
@@ -11,20 +10,8 @@ const Hero = ({ data, theme, darkMode }) => {
         <header
             id="hero"
             ref={containerRef}
-            className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden"
+            className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12 relative"
         >
-            <div className="absolute inset-0 z-0 opacity-50">
-                <FaultyTerminal
-                    scale={2}
-                    gridMul={[1, 1]}
-                    digitSize={1.5}
-                    uScanlineIntensity={0.5}
-                    uGlitchAmount={0.5}
-                    uFlickerAmount={0.2}
-                    tint={darkMode ? '#5227FF' : '#B19EEF'}
-                />
-            </div>
-
             {/* Left side text */}
             <div className="flex-1 space-y-6 z-10">
                 <div className="text-7xl md:text-9xl mb-4 leading-none text-shadow-mc font-bold tracking-tighter cursor-default">
@@ -44,7 +31,7 @@ const Hero = ({ data, theme, darkMode }) => {
                     Full‑Stack Developer & Designer
                 </h2>
                 <h3 className={`text-2xl md:text-3xl ${theme.mutedText} tracking-wide`}>{data.title}</h3>
-                <div className="flex items-center gap-4 text-2xl opacity-90">
+                <div className="flex items-center gap-4 text-2xl opacity-90 text-white">
                     <MapPin size={24} />
                     <span>{data.location}</span>
                 </div>

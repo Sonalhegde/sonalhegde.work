@@ -4,11 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force dark mode globally */
+body {
+    background: #0f1419;
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+}
+
+html {
+    background: #0f1419;
+}
+
+.dark {
+    background: #0f1419;
+    color: #ffffff;
+}
+
 .text-shadow-mc {
     text-shadow: 2px 2px 0px #000;
 }
 
-/* Radium & Dark Grey Theme Shadows */
 .text-shadow-radium {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(156, 220, 254, 0.6), 0 0 30px rgba(156, 220, 254, 0.4);
 }
@@ -48,6 +63,30 @@
     50% {
         background-position: 100% 50%;
     }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Dark Grey Theme (Radium Accents) */
+.animated-bg-dark {
+    background: linear-gradient(-45deg, #0f1419, #1a1d29, #5227FF, #2d3142);
+    background-size: 400% 400%;
+    animation: gradient-animation 20s ease infinite;
+}
+
+/* Light Grey Theme (Radium Accents) */
+.animated-bg-light {
+    background: linear-gradient(-45deg, #e8eaed, #FF9FFC, #B19EEF, #9ca3af);
+    background-size: 400% 400%;
+    animation: gradient-animation 20s ease infinite;
+}
+
+/* Custom Scrollbar - Grey Theme */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
 }
 
 ::-webkit-scrollbar-track {

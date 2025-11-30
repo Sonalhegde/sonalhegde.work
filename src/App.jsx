@@ -12,6 +12,7 @@ import Blogs from './components/Blogs';
 import Contact from './components/Contact';
 import SocialLinks from './components/SocialLinks';
 import GridDistortion from './components/GridDistortion';
+import FaultyTerminal from './components/FaultyTerminal';
 import { PORTFOLIO_DATA } from './data';
 
 // Simple theme definition (you can expand this later)
@@ -41,35 +42,51 @@ function App() {
 
     return (
         <div className={darkMode ? 'dark' : ''}>
+            {/* Full-page FaultyTerminal background */}
+            <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, opacity: 0.15, pointerEvents: 'none' }}>
+                <FaultyTerminal
+                    scale={2}
+                    gridMul={[1, 1]}
+                    digitSize={1.5}
+                    scanlineIntensity={0.5}
+                    glitchAmount={0.5}
+                    flickerAmount={0.2}
+                    tint={darkMode ? '#5227FF' : '#B19EEF'}
+                    brightness={1.5}
+                />
+            </div>
+
             <GridDistortion
                 color={darkMode ? '#5227FF' : '#000000'}
                 className="opacity-20"
             />
-            <Navbar darkMode={darkMode} toggleTheme={toggleTheme} theme={theme} />
-            <main className="relative min-h-screen">
-                <Hero data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <About data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Events data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Projects data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Skills data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Certifications data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-                <Blogs theme={theme} darkMode={darkMode} />
-                <Contact data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
-            </main>
-            <SocialLinks darkMode={darkMode} />
-            {/* Scroll to Top Button */}
-            {showScrollTop && (
-                <button
-                    onClick={scrollToTop}
-                    className={`fixed bottom-8 left-8 z-50 p-4 glass-btn rounded-full hover:scale-110 transition-all duration-300 ${darkMode ? 'text-blue-300' : 'text-gray-700'}`}
-                    aria-label="Scroll to top"
-                >
-                    <ChevronUp size={24} />
-                </button>
-            )}
-            <footer className={`py-8 text-center border-t ${theme.cardBorder} glass-panel relative z-10`}>
-                <p className="text-xl">© 2025 Sonal Hegde. Crafted with ❤️ and Code.</p>
-            </footer>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+                <Navbar darkMode={darkMode} toggleTheme={toggleTheme} theme={theme} />
+                <main className="relative min-h-screen">
+                    <Hero data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                    <About data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                    <Events data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                    <Projects data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                    <Skills data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                    <Certifications data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                    <Blogs theme={theme} darkMode={darkMode} />
+                    <Contact data={PORTFOLIO_DATA} theme={theme} darkMode={darkMode} />
+                </main>
+                <SocialLinks darkMode={darkMode} />
+                {/* Scroll to Top Button */}
+                {showScrollTop && (
+                    <button
+                        onClick={scrollToTop}
+                        className={`fixed bottom-8 left-8 z-50 p-4 glass-btn rounded-full hover:scale-110 transition-all duration-300 ${darkMode ? 'text-blue-300' : 'text-gray-700'}`}
+                        aria-label="Scroll to top"
+                    >
+                        <ChevronUp size={24} />
+                    </button>
+                )}
+                <footer className={`py-8 text-center border-t ${theme.cardBorder} glass-panel relative z-10`}>
+                    <p className="text-xl text-white">© 2025 Sonal Hegde. Crafted with ❤️ and Code.</p>
+                </footer>
+            </div>
         </div>
     );
 }
