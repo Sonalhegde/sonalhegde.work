@@ -2,7 +2,7 @@ import React from 'react';
 
 const MinecraftBtn = ({ children, onClick, variant = "primary", className = "" }) => {
   // Glassmorphism styles
-  const baseStyle = "font-vt323 text-xl px-6 py-2 glass-btn text-white uppercase tracking-widest cursor-pointer select-none rounded-lg";
+  const baseStyle = "font-vt323 text-2xl md:text-3xl px-8 py-4 glass-btn text-white uppercase tracking-widest cursor-pointer select-none rounded-lg transition-all duration-200 shadow-md hover:shadow-xl hover:scale-105";
 
   const variants = {
     primary: "hover:border-green-400 hover:text-green-400",

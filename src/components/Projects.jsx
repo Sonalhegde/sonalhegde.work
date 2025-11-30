@@ -20,6 +20,14 @@ const Projects = ({ data, theme, darkMode }) => {
                         key={index}
                         className={`group relative ${theme.cardBg} border-2 ${darkMode ? 'border-blue-400/50 hover:border-blue-400 shadow-lg shadow-blue-500/20' : 'border-gray-600/50 hover:border-gray-700 shadow-lg shadow-gray-600/20'} rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105`}
                     >
+                        {/* Project Thumbnail */}
+                        {project.img && (
+                            <img
+                                src={project.img}
+                                alt={project.title}
+                                className="w-full h-56 object-cover object-center"
+                            />
+                        )}
                         <div className="p-6">
                             <div className="flex justify-between items-center mb-4">
                                 <span className={`px-4 py-2 text-sm font-bold rounded-full border-2 ${darkMode ? 'bg-blue-500/30 text-blue-200 border-blue-400' : 'bg-gray-600/30 text-gray-100 border-gray-700'}`}>

@@ -35,25 +35,29 @@ export const PORTFOLIO_DATA = {
             title: "Smart Medication Dispenser",
             desc: "IoT solution using ESP32 to automate medication schedules for the elderly, ensuring timely reminders and dosage accuracy through hardware prototyping.",
             type: "IoT / Hardware",
-            stack: ["ESP32", "Arduino", "C++", "Sensors"]
+            stack: ["ESP32", "Arduino", "C++", "Sensors"],
+            img: "https://source.unsplash.com/random/800x600?medicine,technology"
         },
         {
             title: "KULDIO - AI Based ESG Reporting",
             desc: "AI-based ESG reporting platform tailored for the Nordic region, analyzing and generating comprehensive Environmental, Social, and Governance insights.",
             type: "AI / Software",
-            stack: ["Python", "NLP", "React"]
+            stack: ["Python", "NLP", "React"],
+            img: "https://source.unsplash.com/random/800x600?ai,data"
         },
         {
             title: "Pacman Clone",
             desc: "Classic arcade game recreation using Python and Pygame, featuring custom ghost logic to enhance gameplay dynamics and demonstrate creative problem-solving.",
             type: "Game Dev",
-            stack: ["Python", "Pygame"]
+            stack: ["Python", "Pygame"],
+            img: "https://source.unsplash.com/random/800x600?arcade,game"
         },
         {
             title: "LDR Sensor Detection System",
             desc: "Light Dependent Resistor system for automated lighting control, bridging real-world needs with hardware prototyping.",
             type: "Electronics",
-            stack: ["Embedded C", "Circuitry", "Sensors"]
+            stack: ["Embedded C", "Circuitry", "Sensors"],
+            img: "https://source.unsplash.com/random/800x600?electronics,sensors"
         }
     ],
     events: [

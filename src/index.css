@@ -9,6 +9,8 @@ body {
     background: #0f1419;
     color: #ffffff;
     font-family: 'VT323', monospace;
+    font-size: 20px; /* larger default */
+    line-height: 1.6;
 }
 
 html {
