@@ -12,7 +12,7 @@ const BlogDetail = ({ blogId, onBack, theme, darkMode }) => {
             {/* Back Button */}
             <button
                 onClick={onBack}
-                className={`mb-8 flex items-center gap-2 px-4 py-2 rounded-lg glass-panel transition-all duration-300 hover:scale-105 ${darkMode ? 'text-blue-300 hover:text-blue-200' : 'text-gray-700 hover:text-gray-900'
+                className={`mb-8 flex items-center gap-2 px-4 py-2 rounded-lg glass-panel border-2 transition-all duration-300 hover:scale-105 ${darkMode ? 'text-amber-300 hover:text-amber-200 border-amber-400/50 hover:border-amber-400' : 'text-gray-700 hover:text-gray-900 border-gray-600/50 hover:border-gray-700'
                     }`}
             >
                 <ArrowLeft size={20} />
@@ -21,7 +21,7 @@ const BlogDetail = ({ blogId, onBack, theme, darkMode }) => {
 
             {/* Blog Header */}
             <div className="mb-8">
-                <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 ${darkMode ? 'bg-blue-500/30 text-blue-200 border-2 border-blue-400' : 'bg-gray-600/30 text-gray-100 border-2 border-gray-700'
+                <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 ${darkMode ? 'bg-amber-500/30 text-amber-200 border-2 border-amber-400' : 'bg-gray-600/30 text-gray-100 border-2 border-gray-700'
                     }`}>
                     {blog.category}
                 </span>
@@ -63,7 +63,7 @@ const BlogDetail = ({ blogId, onBack, theme, darkMode }) => {
             {/* Blog Content */}
             <div className={`prose prose-lg max-w-none ${darkMode ? 'prose-invert' : ''}`}>
                 <div
-                    className={`${theme.cardBg} p-8 rounded-2xl border-2 ${darkMode ? 'border-blue-400/50' : 'border-gray-600/50'
+                    className={`p-8 rounded-xl border-2 ${darkMode ? 'bg-gray-900/80 border-amber-400/50' : theme.cardBg + ' border-gray-600/50'
                         }`}
                     dangerouslySetInnerHTML={{
                         __html: blog.content

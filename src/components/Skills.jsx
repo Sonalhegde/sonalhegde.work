@@ -115,18 +115,18 @@ const Skills = ({ data, theme, darkMode }) => {
     return (
         <section id="skills" className="container mx-auto px-4 py-16 scroll-mt-20">
             <div className="flex items-center gap-3 mb-8 group">
-                <div className={`p-2 border-2 ${darkMode ? 'border-blue-400 bg-blue-900/30' : 'border-gray-700 bg-gray-600/30'} glass-panel`}>
-                    <Cpu size={32} className={darkMode ? "text-blue-400" : "text-gray-700"} />
+                <div className={`p-2 border-2 ${darkMode ? 'border-pink-400 bg-pink-900/30' : 'border-gray-700 bg-gray-600/30'} glass-panel rounded-lg`}>
+                    <Cpu size={32} className={darkMode ? "text-pink-400" : "text-gray-700"} />
                 </div>
-                <h2 className={`text-4xl uppercase tracking-widest ${theme.accentText}`}>
+                <h2 className={`text-4xl uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                     Skills & Technologies
                 </h2>
-                <div className={`h-1 flex-grow ml-4 ${darkMode ? 'bg-blue-900' : 'bg-gray-600'}`}></div>
+                <div className={`h-1 flex-grow ml-4 ${darkMode ? 'bg-pink-900/50' : 'bg-gray-600'}`}></div>
             </div>
 
             <div
                 ref={containerRef}
-                className={`relative w-full h-[600px] border-2 rounded-xl overflow-hidden ${darkMode ? 'border-gray-700 bg-gray-900/50' : 'border-gray-300 bg-gray-100/50'} shadow-inner`}
+                className={`relative w-full h-[600px] border-2 rounded-xl overflow-hidden ${darkMode ? 'border-pink-400/50 bg-gray-900/80' : 'border-gray-300 bg-gray-100/50'} shadow-inner transition-all duration-300`}
             >
                 <canvas
                     ref={canvasRef}
@@ -137,8 +137,8 @@ const Skills = ({ data, theme, darkMode }) => {
                     <div
                         key={skill.id}
                         id={`skill-node-${skill.id}`}
-                        className={`absolute top-0 left-0 px-4 py-2 rounded-lg border-2 shadow-lg backdrop-blur-sm transition-colors duration-300 cursor-default hover:scale-110 hover:z-10 ${darkMode
-                                ? 'bg-gray-800/80 border-blue-500/50 text-blue-100 hover:border-blue-400 hover:shadow-blue-500/30'
+                        className={`absolute top-0 left-0 px-4 py-2 rounded-lg border-2 shadow-lg backdrop-blur-sm transition-all duration-300 cursor-default hover:scale-110 hover:z-10 ${darkMode
+                                ? 'bg-gray-800/80 border-pink-500/50 text-pink-100 hover:border-pink-400 hover:shadow-pink-500/30'
                                 : 'bg-white/80 border-gray-400/50 text-gray-800 hover:border-gray-600 hover:shadow-gray-500/30'
                             }`}
                         style={{

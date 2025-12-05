@@ -26,7 +26,7 @@ const Hero = ({ data, theme, darkMode }) => {
                     />
                 </div>
                 <h2
-                    className={`text-3xl md:text-5xl ${theme.accentText} uppercase tracking-wider font-bold`}
+                    className={`text-3xl md:text-5xl uppercase tracking-wider font-bold text-cyan-400`}
                 >
                     Full‑Stack Developer & Designer
                 </h2>
