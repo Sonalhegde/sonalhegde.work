@@ -22,13 +22,13 @@ const Blogs = ({ theme, darkMode }) => {
     return (
         <section id="blogs" className="container mx-auto px-4 py-16 scroll-mt-20">
             <div className="flex items-center gap-3 mb-8 group">
-                <div className={`p-2 border-2 ${darkMode ? 'border-blue-400 bg-blue-900/30' : 'border-gray-700 bg-gray-600/30'} glass-panel`}>
-                    <BookOpen size={32} className={darkMode ? "text-blue-400" : "text-gray-700"} />
+                <div className={`p-2 border-2 ${darkMode ? 'border-amber-400 bg-amber-900/30' : 'border-gray-700 bg-gray-600/30'} glass-panel rounded-lg`}>
+                    <BookOpen size={32} className={darkMode ? "text-amber-400" : "text-gray-700"} />
                 </div>
-                <h2 className={`text-4xl uppercase tracking-widest ${theme.accentText}`}>
+                <h2 className={`text-4xl uppercase tracking-widest ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                     Blogs & Insights
                 </h2>
-                <div className={`h-1 flex-grow ml-4 ${darkMode ? 'bg-blue-900' : 'bg-gray-600'}`}></div>
+                <div className={`h-1 flex-grow ml-4 ${darkMode ? 'bg-amber-900/50' : 'bg-gray-600'}`}></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -36,7 +36,7 @@ const Blogs = ({ theme, darkMode }) => {
                     <div
                         key={post.id}
                         onClick={() => setSelectedBlog(post.id)}
-                        className={`${theme.cardBg} border-2 ${darkMode ? 'border-blue-400/50 hover:border-blue-400 shadow-lg shadow-blue-500/20' : 'border-gray-600/50 hover:border-gray-700 shadow-lg shadow-gray-600/20'} rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer group`}
+                        className={`border-2 rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer group ${darkMode ? 'bg-gray-900/80 border-amber-400/50 hover:border-amber-400 shadow-lg hover:shadow-amber-500/30' : 'bg-white/50 border-gray-600/50 hover:border-gray-700 shadow-lg hover:shadow-gray-600/20'}`}
                     >
                         {/* Blog Image */}
                         <div className="relative h-48 overflow-hidden">
@@ -48,7 +48,7 @@ const Blogs = ({ theme, darkMode }) => {
                                     e.target.src = `https://picsum.photos/400/300?text=${encodeURIComponent(post.category)}`;
                                 }}
                             />
-                            <div className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold ${darkMode ? 'bg-blue-500/80 text-white' : 'bg-gray-700/80 text-white'}`}
+                            <div className={`absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold ${darkMode ? 'bg-amber-500/80 text-white' : 'bg-gray-700/80 text-white'}`}
                             >
                                 {post.category}
                             </div>
@@ -79,7 +79,7 @@ const Blogs = ({ theme, darkMode }) => {
                                 <span>{post.date}</span>
                             </div>
 
-                            <div className={`flex items-center gap-2 font-bold ${theme.accentText} group-hover:gap-4 transition-all`}>
+                            <div className={`flex items-center gap-2 font-bold group-hover:gap-4 transition-all ${darkMode ? 'text-amber-400' : 'text-blue-600'}`}>
                                 Read More
                                 <ArrowRight size={16} />
                             </div>

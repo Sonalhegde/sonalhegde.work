@@ -17,10 +17,10 @@ import { PORTFOLIO_DATA } from './data';
 
 // Simple theme definition (you can expand this later)
 const defaultTheme = {
-    cardBg: 'bg-white dark:bg-gray-800',
-    cardBorder: 'border-gray-200 dark:border-gray-700',
-    accentText: 'text-blue-600 dark:text-blue-400',
-    mutedText: 'text-gray-600 dark:text-gray-400',
+    cardBg: 'bg-white dark:bg-gray-900/80',
+    cardBorder: 'border-gray-300 dark:border-cyan-400/30',
+    accentText: 'text-blue-600 dark:text-cyan-300',
+    mutedText: 'text-gray-700 dark:text-gray-400',
 };
 
 function App() {
@@ -77,15 +77,15 @@ function App() {
                 {showScrollTop && (
                     <button
                         onClick={scrollToTop}
-                        className={`fixed bottom-8 left-8 z-50 p-4 glass-btn rounded-full hover:scale-110 transition-all duration-300 ${darkMode ? 'text-blue-300' : 'text-gray-700'}`}
+                        className={`fixed bottom-8 left-8 z-50 p-4 glass-btn rounded-full hover:scale-110 transition-all duration-300 border-2 border-gray-600/50 ${darkMode ? 'text-cyan-400 hover:border-cyan-400/70 hover:shadow-cyan-500/30' : 'text-gray-700 hover:border-gray-700/70'}`}
                         aria-label="Scroll to top"
                     >
                         <ChevronUp size={24} />
                     </button>
                 )}
-                <footer className={`py-8 text-center border-t ${theme.cardBorder} glass-panel relative z-10`}>
-                    <p className="text-xl text-white">© 2025 Sonal Hegde. Crafted with ❤️ and Code.</p>
-                </footer>
+                <footer className={`py-8 text-center border-t-2 ${darkMode ? 'border-cyan-400/30 bg-gray-900/80' : theme.cardBorder + ' ' + theme.cardBg} glass-panel relative z-10 transition-colors duration-300`}>
+                     <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-900'}`}>© 2025 Sonal Hegde. Crafted with ❤️ and Code.</p>
+                 </footer>
             </div>
         </div>
     );
